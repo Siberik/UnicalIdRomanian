@@ -8,7 +8,7 @@ namespace UnicalIdRomanianLibrary
 {
     public class UnicalIdRomanianClass
     {
-        public static string UnicalIdRomanian(string LastName, bool gender, DateTime birthday,bool resident,string city)
+        public static string UnicalIdRomanian(string LastName, bool gender, DateTime birthday,bool resident,int city)
         {
             string id = "";
             if (birthday.Year > 1900 && birthday.Year < 1949)
@@ -49,15 +49,15 @@ namespace UnicalIdRomanianLibrary
             return id;
             var region = new Dictionary<int, string>()
 {
-    { 1, "Алба (Алба-Юлия)"},
-    { 2, "Арджеш (Питешти)"},
-    { 3, "Арад (Арад)"},
-    { 4, "Бухарест"},
-    { 5, "Бакэу (Бакэу)"},
-    { 6, "Бихор (Орадя)"},
-    { 7, "Бистрица-Нэсэуд (Бистрица)"},
-    { 8, "Брэила (Брэила)"},
-    { 9, "Ботошани (Ботошани)"},
+    { 01, "Алба (Алба-Юлия)"},
+    { 02, "Арджеш (Питешти)"},
+    { 03, "Арад (Арад)"},
+    { 04, "Бухарест"},
+    { 05, "Бакэу (Бакэу)"},
+    { 06, "Бихор (Орадя)"},
+    { 07, "Бистрица-Нэсэуд (Бистрица)"},
+    { 08, "Брэила (Брэила)"},
+    { 09, "Ботошани (Ботошани)"},
     { 10, "Брашов (Брашов)"},
     { 11, "Бузэу (Бузэу)"},
     { 12, "Клуж (Клуж-Напока)"},
@@ -92,6 +92,17 @@ namespace UnicalIdRomanianLibrary
                               { 41, "Вранча (Фокшаны)"},
                                { 42, "Васлуй (Васлуй)"},
 };
+            id+= region[city];
+            if(gender==true)
+            {
+                id += 1;
+            }
+            else
+            {
+                id += 2;
+            }
+           int name= Convert.ToInt32(LastName);
+            id += name;
         }
         
     }
