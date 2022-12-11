@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using UnicalIdRomanianLibrary;
 namespace UniCalIdRomaniaApp
 {
     /// <summary>
@@ -20,7 +20,7 @@ namespace UniCalIdRomaniaApp
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        int count = 0;
         public MainWindow()
         {
             var region = new Dictionary<int, string>()
@@ -68,12 +68,33 @@ namespace UniCalIdRomaniaApp
                 [41] = "Вранча (Фокшаны)",
                 [42] = "Васлуй (Васлуй)",
             };
+            
             InitializeComponent();
-            for (int i = 1; i < region.Count; i++)
+            for (int i = 1; i < region.Count+1; i++)
             {
                 CityComboBox.Items.Add(region[i]);
             }
+            
         }
+        
+        private void GenerateButtonClick(object sender, RoutedEventArgs e)
+        {
+            DateTime Birthday = Convert.ToDateTime(BirdtdayCalendar.Text);
+            bool resident=false;
+            bool gender=false;
+            if(ManRadioButton.IsChecked == true)
+            {
+                gender = true;
+            }
+            if(YesResidentRadioButton.IsChecked == true)
+            {
+                resident=true;
+            }
+            count = CityComboBox.SelectedIndex;
+            Console.WriteLine(count);
+            Console.WriteLine(UnicalIdRomanianClass.UnicalIdRomanian(LastNameTextBox.Text, gender, Birthday, resident, count+1));
+            
         }
+    }
     }
 

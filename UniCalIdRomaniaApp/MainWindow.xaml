@@ -10,28 +10,28 @@
         <StackPanel Width="400" VerticalAlignment="Center">
             <StackPanel Margin="5">
                 <TextBlock Text="Фамилия"/>
-                <TextBox/>
+                <TextBox x:Name="LastNameTextBox"/>
             </StackPanel>
             <StackPanel Margin="5">
                 <TextBlock Text="Ваш пол"/>
                 <StackPanel Orientation="Horizontal">
-                    <RadioButton Content="Мужчина"/>
-                    <RadioButton Content="Женщина"/>
+                    <RadioButton Content="Мужчина" Name="ManRadioButton"/>
+                    <RadioButton Content="Женщина" Name="WomanRadioButton"/>
                 </StackPanel>
             </StackPanel>
-            <DatePicker Margin="5"/>
+            <DatePicker Margin="5" Name="BirdtdayCalendar"/>
             <StackPanel Margin="5">
                 <TextBlock Text="Вы резидент Румынии?"/>
                 <StackPanel Orientation="Horizontal">
-                    <RadioButton Content="Да"/>
-                    <RadioButton Content="Нет"/>
+                    <RadioButton Content="Да" Name="YesResidentRadioButton"/>
+                    <RadioButton Content="Нет" Name="NoResidentRadioButton"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Ваш город:"/>
                 <ComboBox Width="150" Name="CityComboBox"/>
             </StackPanel>
-            <Button Content="Сгенерировать CNP" Margin="13"/>
+            <Button Content="Сгенерировать CNP" Margin="13" Name="GenerateButton" Click="GenerateButtonClick"/>
         </StackPanel>
     </Grid>
 </Window>
