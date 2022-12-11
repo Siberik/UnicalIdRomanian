@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniCalIdRomaniaApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Ты точно житель Румынии?" Height="450" Width="800">
     <Grid>
         <StackPanel Width="400" VerticalAlignment="Center">
             <StackPanel Margin="5">
@@ -29,7 +29,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Ваш город:"/>
-                <ComboBox Width="150"/>
+                <ComboBox Width="150" Name="CityComboBox"/>
             </StackPanel>
             <Button Content="Сгенерировать CNP" Margin="13"/>
         </StackPanel>

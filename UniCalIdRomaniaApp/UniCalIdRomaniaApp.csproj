@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UnicalIdRomanianLibrary\UnicalIdRomanianLibrary.csproj">
+      <Project>{e4d0863c-b545-456f-acbf-9b748d72f919}</Project>
+      <Name>UnicalIdRomanianLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
